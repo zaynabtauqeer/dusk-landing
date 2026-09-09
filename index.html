@@ -172,6 +172,8 @@
   <form id="waitlist" action="https://formsubmit.co/zaynabtauqeer@gmail.com" method="POST">
     <input type="hidden" name="_next" value="https://zaynabtauqeer.github.io/dusk-landing/#join">
     <input type="hidden" name="_subject" value="DUSK waitlist join">
+    <input type="hidden" name="_template" value="table">
+    <input type="hidden" name="email_copy" id="email_copy">
     <input type="email" name="email_address" placeholder="> your@email.com" required>
     <input type="text" name="confession" placeholder="> your worst doom-scroll confession (optional)">
     <button class="btn" type="submit">INSERT COIN →</button>
@@ -263,6 +265,7 @@ document.body.appendChild(fog);
 window.addEventListener('scroll',function(){fog.style.opacity=Math.min(0.8,window.scrollY/1100);});
 var form=document.getElementById('waitlist');
 form.addEventListener('submit',function(){
+  document.getElementById('email_copy').value=form.querySelector('input[type=email]').value;
   sfx('save');
   document.getElementById('ok').style.display='block';
   form.querySelector('.btn').style.display='none';
